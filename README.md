@@ -17,7 +17,7 @@
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name  | string | null: false |
+| name   | string | null: false |
 
 ### Association
 - has_many :room_users
@@ -26,10 +26,10 @@
 
 ## room_users テーブル
 
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
-| user_id | integer | null: false, foreign_key: true |
-| room_id | integer | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :room
@@ -37,11 +37,11 @@
 
 ## messages テーブル
 
-| Column  | Type    | Options                        |
-| ------- | ------- | ------------------------------ |
-| text    | string  |
-| user_id | integer | null: false, foreign_key: true |
-| room_id | integer | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| text    | string     |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :room
